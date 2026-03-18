@@ -5,7 +5,8 @@
 ![Stack](https://img.shields.io/badge/stack-Chrome%20Extension%20%7C%20JavaScript-yellow)
 ![Licencia](https://img.shields.io/badge/licencia-uso%20interno-lightgrey)
 
-Extensión de Chrome para marcar asistencia automáticamente en SIU Guaraní a partir de una lista de DNIs.
+Extensión de navegador web para marcar asistencia automáticamente en SIU Guaraní a partir de una lista de DNIs. 
+Compatible con Chrome, Edge y Firefox.
 
 Pensada para agilizar el trabajo docente y administrativo, eliminando tareas manuales repetitivas.
 
@@ -39,11 +40,12 @@ Pensada para agilizar el trabajo docente y administrativo, eliminando tareas man
 
 ```
 
-asistencia-guarani-pro/
+siu-auto-asistencia/
 │
 ├── manifest.json
-├── background.js
 ├── content.js
+├── popup.js
+├── popup.html 
 ├── styles.css
 └── icons/
 
@@ -51,13 +53,35 @@ asistencia-guarani-pro/
 
 ---
 
+## 🔌 Compatibilidad
+
+- Chromium (Chrome, Edge)
+- Gecko (Firefox)
+
 ## 🚀 Instalación
 
+# Chrome
+
 1. Descargar o clonar este repositorio
-2. Abrir Chrome y navegar a: `chrome://extensions/`
+2. Abrir el navegador e ir a: `chrome://extensions/`
 3. Activar **Modo desarrollador**
 4. Hacer clic en **"Cargar descomprimida"**
 5. Seleccionar la carpeta del proyecto
+
+# Edge
+
+1. Descargar o clonar este repositorio
+2. Abrir el navegador e ir a: `edge://extensions/`
+3. Activar **Modo para desarrolladores**
+4. Hacer clic en **"Cargar desempaquetada"**
+5. Seleccionar la carpeta del proyecto
+
+# Firefox
+
+1. Descargar el archivo .xpi
+2. Abrir el navegador e ir a: `about:addons`
+3. Hacer clic en en el engranaje de opciones y luego **"Instalar complemento desde archivo"**
+4. Seleccionar el archivo .xpi
 
 ---
 
@@ -108,8 +132,8 @@ Este proyecto se basa en una idea original surgida en el ámbito de la **Univers
 
 Aportes clave:
 
-- 💡 La idea inicial de automatizar el marcado de asistencia surge del trabajo de **Matías Müller**
-- 🚀 La iniciativa de llevar esta solución a una extensión de Chrome fue impulsada por **Hernán Coniglio**
+- 💡 La idea inicial de automatizar el marcado de asistencia surge del trabajo de [**Matías Müller**](https://github.com/matiashmuller)
+- 🚀 La iniciativa de llevar esta solución a una extensión de navegador fue impulsada por [**Hernán Coniglio**](https://github.com/hernanconiglio)
 
 Sobre esa base, se desarrolló esta versión, con foco en usabilidad, mantenimiento y extensibilidad, orientada a su aplicación en contextos reales.
 
