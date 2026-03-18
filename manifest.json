@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Asistencia SIU Guaraní PRO",
+  "version": "2.2",
+  "description": "Marcado automático de asistencia",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "action": {
+    "default_title": "Abrir Asistencia",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"]
+    }
+  ]
+}

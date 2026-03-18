@@ -2,6 +2,36 @@
 
 Extensión de Chrome para marcar asistencia automáticamente a partir de una lista de DNIs.
 
+---
+
+🧩 QUÉ TIENE ESTA EXTENSIÓN
+
+✔ UI flotante dentro de SIU (no popup)
+✔ Pegar desde Excel directo
+✔ Limpieza automática de DNIs
+✔ Preview de DNIs detectados
+✔ Contador en tiempo real
+✔ Scroll automático (recorre toda la lista)
+✔ Resaltado visual
+✔ Persistencia (recuerda última lista)
+✔ Botón dentro de la página
+✔ Log en consola
+✔ Manejo de errores
+
+---
+
+📁 ESTRUCTURA
+
+```Bash
+asistencia-guarani-pro/
+│
+├── manifest.json
+├── content.js
+├── styles.css
+```
+
+---
+
 ## 🚀 Instalación
 
 1. Descargar el repo
@@ -31,5 +61,14 @@ Ejemplo válido:
 
 - Solo marca alumnos visibles en pantalla (usa scroll automático)
 - Depende de la estructura HTML de SIU Guaraní
+
+---
+
+🧠 NIVEL REAL DE ESTA HERRAMIENTA
+
+👉 semi-automatización productiva
+👉 reusable
+👉 mantenible
+👉 extensible
 
 ---
