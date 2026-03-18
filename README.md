@@ -29,7 +29,7 @@ Pensada para agilizar el trabajo docente y administrativo, eliminando tareas man
 
 ## 🖼️ Vista previa
 
-![Vista de la extensión](./screenshot.png)
+![Vista de la extensión](./screenshot.PNG)
 
 > El panel aparece flotante en la esquina superior derecha y permite gestionar la asistencia de forma rápida.
 
