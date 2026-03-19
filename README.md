@@ -63,7 +63,7 @@ siu-auto-asistencia/
 ### Chrome
 
 1. Descargar o clonar este repositorio
-2. Abrir el navegador e ir a: `chrome://extensions/`
+2. Abrir el navegador e ir a: [chrome://extensions/](chrome://extensions/)
 3. Activar **Modo desarrollador**
 4. Hacer clic en **"Cargar descomprimida"**
 5. Seleccionar la carpeta del proyecto
@@ -71,7 +71,7 @@ siu-auto-asistencia/
 ### Edge
 
 1. Descargar o clonar este repositorio
-2. Abrir el navegador e ir a: `edge://extensions/`
+2. Abrir el navegador e ir a: [edge://extensions/](edge://extensions/)
 3. Activar **Modo para desarrolladores**
 4. Hacer clic en **"Cargar desempaquetada"**
 5. Seleccionar la carpeta del proyecto
