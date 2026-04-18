@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Asistencia SIU Guaraní PRO",
-  "version": "2.3",
+  "version": "2.4",
   "description": "Marcado automático de asistencia",
   "permissions": [
     "storage",
