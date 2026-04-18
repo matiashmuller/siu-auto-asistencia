@@ -1,38 +1,42 @@
 (function () {
-
-  // TOGGLE (abrir / cerrar desde el icono)
-  let existing = document.getElementById("asistencia-panel");
-  if (existing) {
-    existing.remove();
+  let container = document.getElementById("asistencia-pro-container");
+  if (container) {
+    container.remove();
     return;
   }
 
+  container = document.createElement("div");
+  container.id = "asistencia-pro-container";
+  document.body.appendChild(container);
+
+  const shadow = container.attachShadow({ mode: "open" });
+
+  // --- TRUCO PARA USAR TU STYLES.CSS ---
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = chrome.runtime.getURL("styles.css"); // Esto trae tu archivo externo
+  shadow.appendChild(link);
+
   const panel = document.createElement("div");
   panel.id = "asistencia-panel";
-
   panel.innerHTML = `
     <div id="asistencia-header">
       <h3>Asistencia PRO</h3>
       <button id="cerrar">✕</button>
     </div>
-
     <textarea id="inputDnis" placeholder="Pegá los DNIs..."></textarea>
-
     <button class="btn-main" id="marcar">Marcar asistencia</button>
     <button class="btn-clear" id="limpiar">Limpiar</button>
-
     <div id="preview"></div>
   `;
+  shadow.appendChild(panel);
 
-  document.body.appendChild(panel);
+  // Selectores internos (shadow)
+  const textarea = shadow.getElementById("inputDnis");
+  const preview = shadow.getElementById("preview");
+  shadow.getElementById("cerrar").onclick = () => container.remove();
 
-  const textarea = document.getElementById("inputDnis");
-  const preview = document.getElementById("preview");
-
-  // Cerrar panel
-  document.getElementById("cerrar").onclick = () => panel.remove();
-
-  // Persistencia
+  // Lógica de Persistencia
   chrome.storage.local.get(["dnis"], (res) => {
     if (res.dnis) textarea.value = res.dnis;
     actualizarPreview();
@@ -52,16 +56,14 @@
     preview.textContent = `Detectados: ${lista.length}`;
   }
 
-  // Limpiar
-  document.getElementById("limpiar").onclick = () => {
+  shadow.getElementById("limpiar").onclick = () => {
     textarea.value = "";
-    chrome.storage.local.clear();
+    chrome.storage.local.set({ dnis: "" });
     actualizarPreview();
   };
 
-  // Marcar asistencia
-  document.getElementById("marcar").onclick = () => {
-
+  // Marcar asistencia (Lógica externa al shadow)
+  shadow.getElementById("marcar").onclick = () => {
     let dnis = limpiarInput(textarea.value);
     if (!dnis.length) {
       alert("No hay DNIs válidos");
@@ -83,18 +85,15 @@
 
         if (dniSet.has(dni)) {
           noEncontrados.delete(dni);
-
           if (alumno.classList.contains("ausente")) {
             alumno.click();
             marcados++;
-
             alumno.style.outline = "3px solid #00c853";
             alumno.style.backgroundColor = "#e8f5e9";
           }
         }
-
       } catch (e) {
-        console.warn("Error:", e);
+        console.warn("Error marcando alumno:", e);
       }
     });
 

@@ -34,5 +34,11 @@
         "required": ["none"]
       }
     }
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
